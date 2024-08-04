@@ -1,0 +1,4 @@
+#!/bin/sh
+
+clear
+/usr/bin/node server.js

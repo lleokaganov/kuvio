@@ -1,0 +1,10 @@
+# Rust
+# Siltti compiled code
+**/target/
+# firmware build
+# rustfmt
+**/*.rs.bk
+
+**/node_modules/*
+/backend.js/node_modules
+/backend.js/node_modules/*
