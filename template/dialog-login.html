@@ -1,0 +1,32 @@
+<div id='enter_password' style="font-size: 16px;width:300px;">
+    <div style="position: relative; margin-bottom: 15px;">
+      <span style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); font-size: 18px;">&#128100;</span>
+      <input style="box-sizing: border-box; width:100%; padding: 10px 10px 10px 35px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 0 4px 2px white;"
+        type="text" placeholder="Username" name="username" required />
+    </div>
+
+    <div style="position: relative; margin-bottom: 15px;">
+      <span class="mv0" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); font-size: 18px;">&#128274;</span>
+      <input style="box-sizing: border-box; width:100%; padding: 10px 10px 10px 35px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 0 4px 2px white;"
+        type="password" placeholder="Password" name="password" id="password" required />
+      <div style="cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 18px;"
+	onclick="this.innerHTML=(this.innerHTML=='&#128065;'?'&#128065;&#65039;':'&#128065;'); var e=this.parentNode.querySelector('input');e.setAttribute('type',e.getAttribute('type')=='text'?'password':'text');" 
+      >&#128065;</div>
+    </div>
+
+    <div class='login_email' style="display:none; position: relative; margin-bottom: 15px;">
+      <span style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); font-size: 18px;">&#9993;&#65039;</span>
+      <input style="box-sizing: border-box; width:100%; padding: 10px 10px 10px 35px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 0 4px 2px white;"
+        type="text" placeholder="contact@email.com" name="email" required />
+    </div>
+
+    <button type="submit" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor:pointer;"
+      onmouseover="this.style.backgroundColor='#45a049'"
+      onmouseout="this.style.backgroundColor='#4CAF50'"
+    >Sign In</button>
+
+    <div class='ajax' style='display:none'>{ajaxgif}</div>
+    <div class='err_message' style='font-size: 10px; margin-top: 10px; color: red; display:none;'>Error</div>
+
+    <div class='r' style="margin-top: 10px;">No account? <a href="#" class='mv0 login_create' style="color: blue; text-decoration: underline;" onclick="alert('TODO')">Create</a></div>
+</div>

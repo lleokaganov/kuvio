@@ -1,0 +1,195 @@
+import {LitElement, html, css} from './lit-all.min.js';
+
+class SecondScreen extends LitElement {
+
+    static properties = {
+	my_audits_stringify: { type: String }, // Объявляем свойство
+	// Для рисования аудита
+	audit_mode: { type: String },
+	audit_id: { type: String },
+	audit_name: { type: String },
+	audit_description: { type: String },
+	audit_blake3: { type: String },
+        audit_candidates: { type: Number },
+        audit_parameters: { type: Number },
+        audit_evidences: { type: Number },
+        audit_asks: { type: Array },
+        audit_rules: { type: Array },
+	candidates_new_length: { type: Number },
+	candidates_old_length: { type: Number },
+	// mode: {type: String},
+	new: { type: Boolean },
+    }
+
+    constructor() {
+        super();
+    }
+
+
+  static styles = css`
+
+    :host {
+        width:100%
+    }
+
+.mv,.mv0,.mv00 { transition: transform 0.2s ease-in-out; cursor: pointer; }
+.mv:hover,mv0:hover,mv00:hover { transition-property: transform; transition-duration: 0.2s;
+animation: none; transform: scale(1.7); cursor:pointer;}
+.mv0:hover { transform: scale(1.1); }
+.mv00:hover { transform: scale(1.05); }
+
+.LL {
+    width:100%;
+    max-width:100%;
+    margin: 0 20px 40px 20px;
+    box-sizing: border-box;
+    EEEEEEEEborder: 1px dotted pink;
+    EEEEEEEEEmax-width:1024px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px 0px;
+
+    box-sizing: border-box;
+    gap: 6px;
+    text-align: left;
+    font-size: 16px;
+    color: #000;
+    font-family: Inter;
+}
+
+.item-linked {
+    border-bottom: 2px solid #000;
+}
+
+.item-parent {
+    border-radius: 16px 16px 0px 0px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 32px 0px 16px;
+    gap: 32px;
+    font-size: 16px;
+}
+
+.item-media {
+    border-radius: 0px 0px 16px 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    min-height: 600px;
+    margin-bottom: 40px;
+    text-align: left;
+display: flex;
+align-items: flex-start;
+}
+
+.logout {
+    position: relative;
+    font-size: 14px;
+    line-height: 130%;
+    font-weight: 500;
+    color: #356bff;
+}
+
+.candidates {
+    position: relative;
+    line-height: 130%;
+    font-weight: 500;
+}
+
+.spacer {
+    flex: 1;
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+}
+
+.frame-child {
+    width: 20px;
+    border-radius: 999px;
+    height: 20px;
+    object-fit: cover;
+}
+.frame-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.frame-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+}
+
+.wrapper {
+    border-radius: 999px;
+    background-color: #ffc935;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+`;
+
+
+
+  render_part(){
+    if(this.mode == 'Candidates') return html`candidate mode`;
+    return html`other mode`;
+  }
+
+  render() {
+
+    const s = html`
+	<div class="LL" id='secondScreen'>
+
+	    <div class="item-parent">
+		    <div class="item${this.mode=='Audits'?' item-linked':''}" @click="${this.chmode}" name="Audits"><div class="candidates mv0">Audits</div></div>
+		    <div class="item${this.mode!='Audits'?' item-linked':''}" @click="${this.chmode}" name="Candidates">
+			    <div class="candidates mv0">Candidates</div>
+			    ${this.candidates_new_length ? html`<div class="wrapper"><div class="candidates">${this.candidates_new_length}</div></div>`:html``}
+		    </div>
+		    <div class="spacer"></div>
+        	    <div class="frame-parent">
+			    ${unis ? html`
+			    <div class="frame-group" @click="${KUVIO.LOGIN.login}">
+    				    <img class="frame-child" src="/users/userpick_42.webp">
+        			    <div class="candidates mv0">${h(unis_login)}</div>
+    			    </div>
+    			    <div class="logout mv0" @click="${this.logout}">Logout</div>
+			    `:html`
+    			    <div class="logout mv0" @click="${this.login}">Login</div>
+			    `}
+
+		    </div>
+    	    </div>
+
+	    <div class="item-media">
+		${this.render_part()}
+	    </div>
+</div>`;
+    return s;
+  } // `
+
+}
+
+customElements.define('second-screen', SecondScreen);

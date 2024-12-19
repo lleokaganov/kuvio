@@ -1,0 +1,49 @@
+/*********** toggle **************/
+.switch { display: inline-block; /*margin: 10px;*/ align-items: center; cursor: pointer; }
+.switch input { display: none; }
+.switch DIV {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+    margin-left: 10px;
+}
+.switch DIV::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s ease;
+}
+.switch input:checked + DIV { background-color: #4CAF50; }
+.switch input:checked + DIV::before { transform: translateX(26px); }
+/*********************************/
+
+.param { EEdisplay:inline-block;  }
+.rule { white-space: nowrap; margin-top:10px; margin-bottom:10px; border-bottom:1px dotted #ccc; }
+.input_warning { border: 3px solid red !important; margin:1px;}
+
+/* формы */
+.input_symb { position: absolute; top: 50%; left: 10px; transform: translateY(-50%); font-size: 23px; }
+.input_form { padding: 10px 10px 10px 30px; border: 1px solid #ccc; border-radius: 4px; }
+.input_btn { width: 80%; padding: 10px; background-color: #20c997; border: none; border-radius: 4px; color: #fff; font-size: 16px; cursor: pointer; margin-top: 10px; }
+
+/********************************************************************/
+
+.td_addr { width: 100% }
+
+.kn {
+  font-size: 9px;
+  padding: 3px;
+  background-color: #b9d2de;
+  border-radius: 12px;
+}
+
