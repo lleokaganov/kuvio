@@ -1,0 +1,9 @@
+#!/bin/sh
+
+clear
+
+cd /home/SERVICES/kuvio-backend
+
+/usr/bin/node server.js
+
+#sudo -u ubuntu /usr/bin/node server.js >> log.txt 2>&1

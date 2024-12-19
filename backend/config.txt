@@ -1,0 +1,28 @@
+# backend port
+port=8484
+
+# salt for users logins
+unic_salt = ghghdfgfhgdfhgd
+
+# IPFS
+ipfs_endpoint = https://ipfs.zymologia.fi/
+ipfs_endpoint_doc = https://ipfs.zymologia.fi/type_doc/
+ipfs_endpointSave = https://ipfs.zymologia.fi/OOO_Add_pass
+ipfs_endpointRm = https://ipfs.zymologia.fi/OOO_Rm_pass
+ipfs_endpointLs = https://ipfs.zymologia.fi/OOO_ls
+ipfs_endpointInfo = https://ipfs.zymologia.fi/OOO_info?get=
+
+# ChatGPT
+gpt_key = sk-rUPia[ccccccccccccccccccc]
+gpt_model = gpt-4o-mini
+
+# gpt_model = gpt-4o-mini # $0.15-$0.60 1M
+# gpt_model = gpt-3.5-turbo-0125 # $0.50-$1.50 1M
+# gpt_model = gpt-4 # $5.00-$15.00 1M
+
+# Email settings
+email_service = gmail
+email_user = hey@kampe.la
+email_pass = aaaa aaaa aaaa aaaa
+email_to = investors@kuvio.pro
+#lleo@lleo.me
